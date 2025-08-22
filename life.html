@@ -6,11 +6,14 @@
   <title>Life — Travel & Articles • Dr. Robail Yasrab</title>
   <meta name="description" content="Travel photography, personal notes, and articles by Dr. Robail Yasrab." />
   <link rel="icon" href="./assets/images/logo.ico" type="image/x-icon" />
+
+  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
   <style>
     :root{--bg:12 14 22;--text:226 232 240;--muted:148 163 184;--primary:99 102 241;--primary-2:236 72 153;--accent:45 212 191;--card:22 24 38;--shadow:0 10px 30px rgba(0,0,0,.35);--radius:18px}
     body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;color:rgb(var(--text));background:
@@ -27,6 +30,7 @@
     .card{background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.10);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
     h1{margin:0 0 6px}
     .muted{color:rgb(var(--muted))}
+
     .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
     @media (max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
     @media (max-width:560px){.gallery{grid-template-columns:1fr}}
@@ -35,6 +39,7 @@
     .shot img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
     .shot:hover img{transform:scale(1.05)}
     .shot .cap{padding:10px 12px;display:flex;justify-content:space-between;align-items:center}
+
     .articles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
     @media (max-width:900px){.articles{grid-template-columns:repeat(2,1fr)}}
     @media (max-width:560px){.articles{grid-template-columns:1fr}}
@@ -43,14 +48,17 @@
     .post img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
     .post:hover img{transform:scale(1.03)}
     .post .body{padding:12px}
+
     footer{text-align:center;color:rgb(var(--muted));padding:22px 0}
+    .placeholder{background:repeating-linear-gradient(45deg,#333,#333 10px,#444 10px,#444 20px)}
   </style>
 </head>
 <body>
   <div class="wrap">
     <div class="topbar">
       <div class="brand">
-        <img src="./assets/images/me.jpg" alt="Robail Yasrab" />
+        <!-- We'll set this src via the same base-path logic -->
+        <img class="needs-base" data-path="assets/images/me.jpg" alt="Robail Yasrab" />
         <div>
           <strong>Life — Travel & Articles</strong>
           <div class="muted">By Dr. Robail Yasrab</div>
@@ -62,65 +70,51 @@
       </div>
     </div>
 
-<section class="card" style="margin-bottom:14px">
-  <h1>Travel Gallery</h1>
-  <p class="muted">Moments from conferences, fieldwork, and off-duty wanderings.</p>
+    <section class="card" style="margin-bottom:14px">
+      <h1>Travel Gallery</h1>
+      <p class="muted">Moments from conferences, fieldwork, and off-duty wanderings.</p>
 
-  <div class="gallery">
-    <!-- Tip: you can keep adding more <article class="shot"> blocks -->
-    <article class="shot">
-      <figure>
-        <img class="img-fallback" data-src="./assets/travel/trip-01.jpg" alt="Cambridge" loading="lazy" width="1200" height="800">
-      </figure>
-      <div class="cap"><span>Cambridge</span><ion-icon name="camera-outline"></ion-icon></div>
-    </article>
+      <div class="gallery">
+        <!-- Use data-file only; the script will find the correct base path + extension -->
+        <article class="shot">
+          <figure><img class="img-flex" data-file="trip-01" alt="Cambridge" loading="lazy" width="1200" height="800"></figure>
+          <div class="cap"><span>Cambridge</span><ion-icon name="camera-outline"></ion-icon></div>
+        </article>
 
-    <article class="shot">
-      <figure>
-        <img class="img-fallback" data-src="./assets/travel/trip-02.jpg" alt="Oxford" loading="lazy" width="1200" height="800">
-      </figure>
-      <div class="cap"><span>Oxford</span><ion-icon name="camera-outline"></ion-icon></div>
-    </article>
+        <article class="shot">
+          <figure><img class="img-flex" data-file="trip-02" alt="Oxford" loading="lazy" width="1200" height="800"></figure>
+          <div class="cap"><span>Oxford</span><ion-icon name="camera-outline"></ion-icon></div>
+        </article>
 
-    <article class="shot">
-      <figure>
-        <img class="img-fallback" data-src="./assets/travel/trip-03.jpg" alt="Dubai" loading="lazy" width="1200" height="800">
-      </figure>
-      <div class="cap"><span>Dubai</span><ion-icon name="camera-outline"></ion-icon></div>
-    </article>
+        <article class="shot">
+          <figure><img class="img-flex" data-file="trip-03" alt="Dubai" loading="lazy" width="1200" height="800"></figure>
+          <div class="cap"><span>Dubai</span><ion-icon name="camera-outline"></ion-icon></div>
+        </article>
 
-    <article class="shot">
-      <figure>
-        <img class="img-fallback" data-src="./assets/travel/trip-04.jpg" alt="Nottingham" loading="lazy" width="1200" height="800">
-      </figure>
-      <div class="cap"><span>Nottingham</span><ion-icon name="camera-outline"></ion-icon></div>
-    </article>
+        <article class="shot">
+          <figure><img class="img-flex" data-file="trip-04" alt="Nottingham" loading="lazy" width="1200" height="800"></figure>
+          <div class="cap"><span>Nottingham</span><ion-icon name="camera-outline"></ion-icon></div>
+        </article>
 
-    <article class="shot">
-      <figure>
-        <img class="img-fallback" data-src="./assets/travel/trip-05.jpg" alt="USTC" loading="lazy" width="1200" height="800">
-      </figure>
-      <div class="cap"><span>USTC</span><ion-icon name="camera-outline"></ion-icon></div>
-    </article>
+        <article class="shot">
+          <figure><img class="img-flex" data-file="trip-05" alt="USTC" loading="lazy" width="1200" height="800"></figure>
+          <div class="cap"><span>USTC</span><ion-icon name="camera-outline"></ion-icon></div>
+        </article>
 
-    <article class="shot">
-      <figure>
-        <img class="img-fallback" data-src="./assets/travel/trip-06.jpg" alt="France" loading="lazy" width="1200" height="800">
-      </figure>
-      <div class="cap"><span>France</span><ion-icon name="camera-outline"></ion-icon></div>
-    </article>
-  </div>
-</section>
-
+        <article class="shot">
+          <figure><img class="img-flex" data-file="trip-06" alt="France" loading="lazy" width="1200" height="800"></figure>
+          <div class="cap"><span>France</span><ion-icon name="camera-outline"></ion-icon></div>
+        </article>
+      </div>
+    </section>
 
     <section class="card">
       <h2 style="margin:0 0 8px">Articles & Notes</h2>
       <p class="muted" style="margin:0 0 12px">AI Takeover Won’t Look Like Sci-Fi — It’ll Look Like a KPI.</p>
       <div class="articles">
-        <!-- Replace links/thumbnails as needed -->
         <article class="post">
           <a href="https://medium.com/@robailsong/ai-takeover-wont-look-like-sci-fi-it-ll-look-like-a-kpi-06780d59a84f/" target="_blank" rel="noreferrer noopener">
-            <figure><img src="./assets/images/blog-2.jpg" alt="Article thumbnail"></figure>
+            <figure><img class="needs-base" data-path="assets/images/blog-2.jpg" alt="Article thumbnail"></figure>
             <div class="body">
               <strong>AI Takeover Won’t Look Like Sci-Fi — It’ll Look Like a KPI</strong>
               <div class="muted">Process models, safety, and deployment.</div>
@@ -129,7 +123,7 @@
         </article>
         <article class="post">
           <a href="https://medium.com/" target="_blank" rel="noreferrer noopener">
-            <figure><img src="./assets/images/blog-3.jpg" alt="Article thumbnail"></figure>
+            <figure><img class="needs-base" data-path="assets/images/blog-3.jpg" alt="Article thumbnail"></figure>
             <div class="body">
               <strong>Notes from Oxford & Cambridge</strong>
               <div class="muted">Bridging lab work and translation.</div>
@@ -138,7 +132,7 @@
         </article>
         <article class="post">
           <a href="https://medium.com/" target="_blank" rel="noreferrer noopener">
-            <figure><img src="./assets/images/blog-4.jpg" alt="Article thumbnail"></figure>
+            <figure><img class="needs-base" data-path="assets/images/blog-4.jpg" alt="Article thumbnail"></figure>
             <div class="body">
               <strong>Travel Toolkit for Researchers</strong>
               <div class="muted">Packing, power, and productivity.</div>
@@ -152,7 +146,7 @@
   </div>
 
   <script>
-    // Theme toggle mirrored from index
+    // Theme toggle (mirrors index)
     const html = document.documentElement;
     const btn = document.getElementById('themeToggle');
     const saved = localStorage.getItem('theme');
@@ -165,55 +159,79 @@
     });
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-<script>
-  // Try smart fallbacks for broken image paths/extensions and subfolder depth
-  (function() {
-    const candidates = (src) => {
-      const exts = ['.jpg','.jpeg','.png','.JPG','.JPEG','.PNG'];
-      const prefixes = ['./','../','/'];
-      const url = new URL(src, window.location.href);
-      const path = url.pathname;
-      const base = path.replace(/\.[^.]+$/, ''); // without extension
-      const curExt = (path.match(/(\.[^.]+)$/) || [''])[0];
 
-      let combos = [];
-      // if has an extension, try other extensions
-      if (curExt) {
-        exts.forEach(e => combos.push(base + e));
+  <script>
+    /* Robust base-path + extension resolver for GitHub Pages (user or project sites)
+       Usage:
+       - For gallery images, set: <img class="img-flex" data-file="trip-01">
+         Files must live under: assets/travel/trip-01.(jpg|jpeg|png)
+       - For other images, set:  <img class="needs-base" data-path="assets/images/me.jpg">
+    */
+    (function () {
+      // Determine base prefix: "/" (user site) or "/<repo>/" (project site)
+      const parts = location.pathname.split('/').filter(Boolean);
+      const isGh = location.hostname.endsWith('.github.io');
+      let base = '/';
+      // If project site (e.g., /repo-name/...), first segment is repo
+      if (isGh && parts.length >= 1 && !/\.html?$/i.test(parts[0])) {
+        base = `/${parts[0]}/`;
       }
-      // if path already had a prefix, try other prefixes too
-      prefixes.forEach(p => {
-        exts.forEach(e => combos.push(p + 'assets/travel/' + base.split('/').pop() + e));
+
+      // 1) Resolve general images with known relative paths
+      document.querySelectorAll('img.needs-base[data-path]').forEach(img => {
+        const rel = img.getAttribute('data-path').replace(/^\.?\//, ''); // strip starting ./ or /
+        const url = base + rel;
+        const trySet = (u, onfail) => {
+          const t = new Image();
+          t.onload = () => { img.src = u; };
+          t.onerror = onfail;
+          t.src = u;
+        };
+        trySet(url, () => {
+          // Fallback to root if base fails (rare)
+          trySet('/' + rel, () => {
+            img.classList.add('placeholder');
+            img.alt = (img.alt || 'Image') + ' (not found)';
+          });
+        });
       });
-      // Also try the same path without "./"
-      combos.push(path.replace(/^\.\//,''));
-      return Array.from(new Set(combos));
-    };
 
-    document.querySelectorAll('img.img-fallback').forEach(img => {
-      const original = img.getAttribute('data-src');
-      if (!original) return;
-      img.src = original;
+      // 2) Resolve gallery images with unknown extension/case
+      const exts = ['.jpg', '.jpeg', '.png', '.JPG', '.JPEG', '.PNG'];
+      document.querySelectorAll('img.img-flex[data-file]').forEach(img => {
+        const file = img.getAttribute('data-file'); // e.g., "trip-01"
+        const make = ext => `${base}assets/travel/${file}${ext}`;
+        const cands = exts.map(make);
 
-      let tried = 0;
-      let options = [];
-
-      img.addEventListener('error', function handleErr() {
-        if (!options.length) options = candidates(original);
-        if (tried >= options.length) {
-          img.removeEventListener('error', handleErr);
-          // show a subtle placeholder
-          img.style.background = 'repeating-linear-gradient(45deg, #333, #333 10px, #444 10px, #444 20px)';
-          img.alt = (img.alt || 'Image') + ' (not found)';
-          return;
-        }
-        const next = options[tried++];
-        img.src = next;
-      }, { once:false });
-    });
-  })();
-</script>
-
-  
+        let i = 0;
+        const tryNext = () => {
+          if (i >= cands.length) {
+            // try also from root ("/assets/...") just in case
+            i = 0;
+            const c2 = exts.map(ext => `/assets/travel/${file}${ext}`);
+            const tryRoot = () => {
+              if (i >= c2.length) {
+                img.classList.add('placeholder');
+                img.alt = (img.alt || 'Image') + ' (not found)';
+                return;
+              }
+              const u = c2[i++];
+              const t = new Image();
+              t.onload = () => { img.src = u; };
+              t.onerror = tryRoot;
+              t.src = u;
+            };
+            return tryRoot();
+          }
+          const url = cands[i++];
+          const tester = new Image();
+          tester.onload = () => { img.src = url; };
+          tester.onerror = tryNext;
+          tester.src = url;
+        };
+        tryNext();
+      });
+    })();
+  </script>
 </body>
 </html>

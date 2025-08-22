@@ -165,5 +165,55 @@
     });
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+<script>
+  // Try smart fallbacks for broken image paths/extensions and subfolder depth
+  (function() {
+    const candidates = (src) => {
+      const exts = ['.jpg','.jpeg','.png','.JPG','.JPEG','.PNG'];
+      const prefixes = ['./','../','/'];
+      const url = new URL(src, window.location.href);
+      const path = url.pathname;
+      const base = path.replace(/\.[^.]+$/, ''); // without extension
+      const curExt = (path.match(/(\.[^.]+)$/) || [''])[0];
+
+      let combos = [];
+      // if has an extension, try other extensions
+      if (curExt) {
+        exts.forEach(e => combos.push(base + e));
+      }
+      // if path already had a prefix, try other prefixes too
+      prefixes.forEach(p => {
+        exts.forEach(e => combos.push(p + 'assets/travel/' + base.split('/').pop() + e));
+      });
+      // Also try the same path without "./"
+      combos.push(path.replace(/^\.\//,''));
+      return Array.from(new Set(combos));
+    };
+
+    document.querySelectorAll('img.img-fallback').forEach(img => {
+      const original = img.getAttribute('data-src');
+      if (!original) return;
+      img.src = original;
+
+      let tried = 0;
+      let options = [];
+
+      img.addEventListener('error', function handleErr() {
+        if (!options.length) options = candidates(original);
+        if (tried >= options.length) {
+          img.removeEventListener('error', handleErr);
+          // show a subtle placeholder
+          img.style.background = 'repeating-linear-gradient(45deg, #333, #333 10px, #444 10px, #444 20px)';
+          img.alt = (img.alt || 'Image') + ' (not found)';
+          return;
+        }
+        const next = options[tried++];
+        img.src = next;
+      }, { once:false });
+    });
+  })();
+</script>
+
+  
 </body>
 </html>

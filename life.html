@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Life — Travel & Articles • Dr. Robail Yasrab</title>
+  <meta name="description" content="Travel photography, personal notes, and articles by Dr. Robail Yasrab." />
+  <link rel="icon" href="./assets/images/logo.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <style>
+    :root{--bg:12 14 22;--text:226 232 240;--muted:148 163 184;--primary:99 102 241;--primary-2:236 72 153;--accent:45 212 191;--card:22 24 38;--shadow:0 10px 30px rgba(0,0,0,.35);--radius:18px}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;color:rgb(var(--text));background:
+      radial-gradient(1000px 700px at 100% -10%, rgba(var(--primary), .25), transparent 60%),
+      radial-gradient(800px 600px at -10% 10%, rgba(var(--primary-2), .18), transparent 60%),
+      rgb(12 14 22)}
+    a{color:rgb(var(--accent));text-decoration:none} a:hover{text-decoration:underline}
+    .wrap{max-width:1100px;margin:auto;padding:24px}
+    .topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+    .brand{display:flex;gap:10px;align-items:center}
+    .brand img{width:36px;height:36px;border-radius:50%;object-fit:cover}
+    .nav{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-grid;place-items:center;padding:10px 14px;border:1px solid rgba(255,255,255,.12);background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));border-radius:12px;color:inherit}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.10);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+    h1{margin:0 0 6px}
+    .muted{color:rgb(var(--muted))}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    @media (max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:560px){.gallery{grid-template-columns:1fr}}
+    .shot{position:relative;overflow:hidden;border-radius:14px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03)}
+    .shot figure{margin:0;aspect-ratio:4/3;overflow:hidden}
+    .shot img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+    .shot:hover img{transform:scale(1.05)}
+    .shot .cap{padding:10px 12px;display:flex;justify-content:space-between;align-items:center}
+    .articles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    @media (max-width:900px){.articles{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:560px){.articles{grid-template-columns:1fr}}
+    .post{border-radius:14px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);overflow:hidden}
+    .post figure{margin:0;aspect-ratio:16/9}
+    .post img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+    .post:hover img{transform:scale(1.03)}
+    .post .body{padding:12px}
+    footer{text-align:center;color:rgb(var(--muted));padding:22px 0}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <img src="./assets/images/me.jpg" alt="Robail Yasrab" />
+        <div>
+          <strong>Life — Travel & Articles</strong>
+          <div class="muted">By Dr. Robail Yasrab</div>
+        </div>
+      </div>
+      <div class="nav">
+        <a class="btn" href="./index.html"><ion-icon name="home-outline" style="margin-right:6px"></ion-icon>Home</a>
+        <button class="btn" id="themeToggle"><ion-icon name="moon-outline" style="margin-right:6px"></ion-icon>Theme</button>
+      </div>
+    </div>
+
+    <section class="card" style="margin-bottom:14px">
+      <h1>Travel Gallery</h1>
+      <p class="muted">Moments from conferences, fieldwork, and off-duty wanderings.</p>
+      <div class="gallery">
+        <!-- Replace image paths with your real photos -->
+        <article class="shot">
+          <figure><img src="./assets/travel/trip-01.jpg" alt="Travel photo 1" loading="lazy"></figure>
+          <div class="cap"><span>Cambridge</span><ion-icon name="camera-outline"></ion-icon></div>
+        </article>
+        <article class="shot">
+          <figure><img src="./assets/travel/trip-02.jpg" alt="Travel photo 2" loading="lazy"></figure>
+          <div class="cap"><span>Oxford</span><ion-icon name="camera-outline"></ion-icon></div>
+        </article>
+        <article class="shot">
+          <figure><img src="./assets/travel/trip-03.jpg" alt="Travel photo 3" loading="lazy"></figure>
+          <div class="cap"><span>Dubai</span><ion-icon name="camera-outline"></ion-icon></div>
+        </article>
+        <article class="shot">
+          <figure><img src="./assets/travel/trip-04.jpg" alt="Travel photo 4" loading="lazy"></figure>
+          <div class="cap"><span>Nottingham</span><ion-icon name="camera-outline"></ion-icon></div>
+        </article>
+        <article class="shot">
+          <figure><img src="./assets/travel/trip-05.jpg" alt="Travel photo 5" loading="lazy"></figure>
+          <div class="cap"><span>USTC</span><ion-icon name="camera-outline"></ion-icon></div>
+        </article>
+        <article class="shot">
+          <figure><img src="./assets/travel/trip-06.jpg" alt="Travel photo 6" loading="lazy"></figure>
+          <div class="cap"><span>Conference</span><ion-icon name="camera-outline"></ion-icon></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 style="margin:0 0 8px">Articles & Notes</h2>
+      <p class="muted" style="margin:0 0 12px">Writing on research, travel, and tools.</p>
+      <div class="articles">
+        <!-- Replace links/thumbnails as needed -->
+        <article class="post">
+          <a href="https://medium.com/" target="_blank" rel="noreferrer noopener">
+            <figure><img src="./assets/images/blog-2.jpg" alt="Article thumbnail"></figure>
+            <div class="body">
+              <strong>Agentic AI in Clinical Workflows</strong>
+              <div class="muted">Process models, safety, and deployment.</div>
+            </div>
+          </a>
+        </article>
+        <article class="post">
+          <a href="https://medium.com/" target="_blank" rel="noreferrer noopener">
+            <figure><img src="./assets/images/blog-3.jpg" alt="Article thumbnail"></figure>
+            <div class="body">
+              <strong>Notes from Oxford & Cambridge</strong>
+              <div class="muted">Bridging lab work and translation.</div>
+            </div>
+          </a>
+        </article>
+        <article class="post">
+          <a href="https://medium.com/" target="_blank" rel="noreferrer noopener">
+            <figure><img src="./assets/images/blog-4.jpg" alt="Article thumbnail"></figure>
+            <div class="body">
+              <strong>Travel Toolkit for Researchers</strong>
+              <div class="muted">Packing, power, and productivity.</div>
+            </div>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <footer>© <span id="year"></span> Dr. Robail Yasrab • <a href="./index.html">Back to Home</a></footer>
+  </div>
+
+  <script>
+    // Theme toggle mirrored from index
+    const html = document.documentElement;
+    const btn = document.getElementById('themeToggle');
+    const saved = localStorage.getItem('theme');
+    if (saved) html.setAttribute('data-theme', saved);
+    btn?.addEventListener('click', () => {
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      btn.querySelector('ion-icon')?.setAttribute('name', next === 'dark' ? 'moon-outline' : 'sunny-outline');
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
